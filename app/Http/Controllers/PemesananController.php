@@ -298,7 +298,8 @@ class PemesananController extends Controller
     public function cetak_laporan()
     {
         $riwayat = Pemesanan::select('*')->where('status', 'Lunas')->get();
-        return view('admin/export-laporan',compact('riwayat'));
+        $total = DB::table('pemesanans')->where('status', ['Lunas'])->sum('total_harga');
+        return view('admin/export-laporan',compact('riwayat','total'));
     }
 
     public function pesananbatal($id)
