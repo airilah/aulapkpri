@@ -85,7 +85,13 @@
                                 </td>
                             </tr>
                         </tbody>
-                    @endforeach
+                        @endforeach
+                        <tfoot>
+                            <tr>
+                                <td colspan="7" style="text-align:right"><strong>Total Seluruh Pemasukan:</strong></td>
+                                <td id="totalPemasukan" colspan="2"><strong>{{ 'Rp '. number_format($total, 0, ',', '.') }}</strong></td>
+                            </tr>
+                        </tfoot>
                     </table>
                 </div>
               <!-- /.card-body -->
